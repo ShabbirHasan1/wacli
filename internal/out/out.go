@@ -34,4 +34,3 @@ func WriteError(w io.Writer, asJSON bool, err error) error {
 	_, _ = fmt.Fprintln(w, err.Error())
 	return nil
 }
-

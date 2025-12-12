@@ -85,4 +85,3 @@ func (c *Client) DownloadMediaToFile(ctx context.Context, directPath string, enc
 	}
 	return info.Size(), nil
 }
-

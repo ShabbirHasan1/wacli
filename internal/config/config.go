@@ -12,4 +12,3 @@ func DefaultStoreDir() string {
 	}
 	return filepath.Join(home, ".wacli")
 }
-

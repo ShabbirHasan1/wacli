@@ -38,4 +38,3 @@ func SanitizeFilename(name string) string {
 	name = strings.ReplaceAll(name, string(filepath.Separator), "_")
 	return name
 }
-

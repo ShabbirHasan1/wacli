@@ -48,12 +48,12 @@ func newSyncCmd(flags *rootFlags) *cobra.Command {
 			}
 
 			res, err := a.Sync(ctx, appPkg.SyncOptions{
-				Mode:     mode,
-				AllowQR:  false,
-				DownloadMedia: downloadMedia,
+				Mode:            mode,
+				AllowQR:         false,
+				DownloadMedia:   downloadMedia,
 				RefreshContacts: refreshContacts,
 				RefreshGroups:   refreshGroups,
-				IdleExit: idleExit,
+				IdleExit:        idleExit,
 			})
 			if err != nil {
 				return err

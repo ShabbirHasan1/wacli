@@ -15,38 +15,41 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
           cache: true
 
+      - name: Setup pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.23.0 --activate
+          pnpm --version
+
       - name: Install build dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends build-essential
 
-      - name: Go env
-        run: |
-          go version
-          go env
+      - name: pnpm format:check
+        run: pnpm -s format:check
 
-      - name: Test (default)
+      - name: pnpm lint
+        run: pnpm -s lint
+
+      - name: pnpm test
         env:
           CGO_ENABLED: "1"
-        run: go test ./...
+        run: pnpm -s test
 
-      - name: Test (sqlite_fts5)
+      - name: pnpm build
         env:
           CGO_ENABLED: "1"
-        run: go test -tags sqlite_fts5 ./...
-
-      - name: Build (default)
-        env:
-          CGO_ENABLED: "1"
-        run: go build ./cmd/wacli
-
-      - name: Build (sqlite_fts5)
-        env:
-          CGO_ENABLED: "1"
-        run: go build -tags sqlite_fts5 ./cmd/wacli
+        run: pnpm -s build

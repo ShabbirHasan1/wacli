@@ -231,12 +231,12 @@ type Message struct {
 }
 
 type Contact struct {
-	JID        string
-	Phone      string
-	Name       string
-	Alias      string
-	Tags       []string
-	UpdatedAt  time.Time
+	JID       string
+	Phone     string
+	Name      string
+	Alias     string
+	Tags      []string
+	UpdatedAt time.Time
 }
 
 func unix(t time.Time) int64 {
@@ -276,23 +276,23 @@ func (d *DB) UpsertChat(jid, kind, name string, lastTS time.Time) error {
 }
 
 type UpsertMessageParams struct {
-	ChatJID      string
-	ChatName     string
-	MsgID        string
-	SenderJID    string
-	SenderName   string
-	Timestamp    time.Time
-	FromMe       bool
-	Text         string
-	MediaType    string
-	MediaCaption string
-	Filename     string
-	MimeType     string
-	DirectPath   string
-	MediaKey     []byte
-	FileSHA256   []byte
+	ChatJID       string
+	ChatName      string
+	MsgID         string
+	SenderJID     string
+	SenderName    string
+	Timestamp     time.Time
+	FromMe        bool
+	Text          string
+	MediaType     string
+	MediaCaption  string
+	Filename      string
+	MimeType      string
+	DirectPath    string
+	MediaKey      []byte
+	FileSHA256    []byte
 	FileEncSHA256 []byte
-	FileLength   uint64
+	FileLength    uint64
 }
 
 func (d *DB) UpsertMessage(p UpsertMessageParams) error {

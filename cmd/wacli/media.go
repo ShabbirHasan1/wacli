@@ -70,13 +70,13 @@ func newMediaDownloadCmd(flags *rootFlags) *cobra.Command {
 			_ = a.DB().MarkMediaDownloaded(info.ChatJID, info.MsgID, target, now)
 
 			resp := map[string]any{
-				"chat":        info.ChatJID,
-				"id":          info.MsgID,
-				"path":        target,
-				"bytes":       bytes,
-				"media_type":  info.MediaType,
-				"mime_type":   info.MimeType,
-				"downloaded":  true,
+				"chat":          info.ChatJID,
+				"id":            info.MsgID,
+				"path":          target,
+				"bytes":         bytes,
+				"media_type":    info.MediaType,
+				"mime_type":     info.MimeType,
+				"downloaded":    true,
 				"downloaded_at": now.Format(time.RFC3339Nano),
 			}
 			if flags.asJSON {

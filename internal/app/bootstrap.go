@@ -44,4 +44,3 @@ func (a *App) refreshGroups(ctx context.Context) error {
 	}
 	return nil
 }
-

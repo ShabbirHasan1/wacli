@@ -74,9 +74,9 @@ func newApp(ctx context.Context, flags *rootFlags, needLock bool, allowUnauthed 
 	}
 
 	a, err := app.New(app.Options{
-		StoreDir:     storeDir,
-		Version:      version,
-		JSON:         flags.asJSON,
+		StoreDir:      storeDir,
+		Version:       version,
+		JSON:          flags.asJSON,
 		AllowUnauthed: allowUnauthed,
 	})
 	if err != nil {

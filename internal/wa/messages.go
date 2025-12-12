@@ -163,4 +163,3 @@ func clone(b []byte) []byte {
 	copy(out, b)
 	return out
 }
-

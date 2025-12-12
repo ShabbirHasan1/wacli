@@ -140,4 +140,3 @@ func (a *App) downloadMediaJob(ctx context.Context, job mediaJob) error {
 	now := time.Now().UTC()
 	return a.db.MarkMediaDownloaded(info.ChatJID, info.MsgID, targetPath, now)
 }
-

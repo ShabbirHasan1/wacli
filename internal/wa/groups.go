@@ -91,4 +91,3 @@ func (c *Client) LeaveGroup(ctx context.Context, group types.JID) error {
 	}
 	return cli.LeaveGroup(ctx, group)
 }
-

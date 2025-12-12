@@ -23,14 +23,14 @@ const (
 )
 
 type SyncOptions struct {
-	Mode      SyncMode
-	AllowQR   bool
-	OnQRCode  func(string)
-	DownloadMedia bool
+	Mode            SyncMode
+	AllowQR         bool
+	OnQRCode        func(string)
+	DownloadMedia   bool
 	RefreshContacts bool
 	RefreshGroups   bool
-	IdleExit  time.Duration // only used for bootstrap/once
-	Verbosity int           // future
+	IdleExit        time.Duration // only used for bootstrap/once
+	Verbosity       int           // future
 }
 
 type SyncResult struct {

@@ -39,3 +39,6 @@ go.work.sum
 
 # Built CLI binary
 /wacli
+
+# pnpm build output
+/dist/
