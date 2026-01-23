@@ -6,6 +6,7 @@
 
 - Start tracking changes for the next release (from 2026-01-23).
 - Send: `wacli send file --filename` to override display name for uploads. (#7 — thanks @plattenschieber)
+- Messages: preserve captions in list/search output while still indexing display text for reactions/media. (#5 — thanks @zats)
 
 ### Fixed
 

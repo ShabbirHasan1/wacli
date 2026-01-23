@@ -89,9 +89,9 @@ func newMessagesListCmd(flags *rootFlags) *cobra.Command {
 				if chatLabel == "" {
 					chatLabel = m.ChatJID
 				}
-				text := strings.TrimSpace(m.DisplayText)
+				text := strings.TrimSpace(m.Text)
 				if text == "" {
-					text = strings.TrimSpace(m.Text)
+					text = strings.TrimSpace(m.DisplayText)
 				}
 				if m.MediaType != "" && text == "" {
 					text = "Sent " + m.MediaType
@@ -187,6 +187,9 @@ func newMessagesSearchCmd(flags *rootFlags) *cobra.Command {
 					chatLabel = m.ChatJID
 				}
 				match := m.Snippet
+				if match == "" {
+					match = strings.TrimSpace(m.Text)
+				}
 				if match == "" {
 					match = strings.TrimSpace(m.DisplayText)
 				}
